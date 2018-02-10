@@ -1,3 +1,93 @@
-body{
+*{
     margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+header{
+    background-color: #313131;
+    width: 100%;
+    text-align: center;
+}
+
+
+#upperMenu{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#downMenu{
+    display: inline-block;
+    background-color: #313131;
+    width: 100%;
+    text-align: center;
+}
+
+#downMenu ul li:hover{
+    background-color: red;
+}
+
+#downMenu ul li{
+    display: inline-block;
+    margin: auto;
+}
+
+#downMenu a{
+    display: block;
+    padding: 20px 10px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 14px;
+}
+
+#downMenu ul{
+    list-style-type: none;
+}
+
+#upperMenu ul li{
+    display: inline-block;
+    margin: auto;
+}
+
+#upperMenu ul li:hover{
+    background-color: red;
+}
+
+#upperMenu ul{
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+#upperMenu a{
+    display: block;
+    padding: 20px 10px;
+    
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 14px;
+}
+
+header img{
+    height: 50px;
+    display: inline-block;
+}
+
+#location{
+    display: inline-block;
+    padding: 19px 10px;
+    vertical-align: top;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#location p{
+    color: whitesmoke;
+    font-size: 14px;
+    border-bottom: 1px dashed whitesmoke;
+}
+
+#mainImg{
+    width: 100%;
+    display: block;
 }

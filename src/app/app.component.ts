@@ -16,8 +16,8 @@ export class AppComponent implements OnInit {
 
     cities: City;
 
-    constructor(private httpService: HttpService){}
+    constructor(private httpService: HttpService) {}
     ngOnInit(): void {
-        this.httpService.getData('cities').subscribe((data: City) => this.cities =data);
+        this.httpService.getData('cities').subscribe((data: City) => this.cities = data);
     }
 }
