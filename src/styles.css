@@ -1,7 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    text-align: center;
 }
 
 
@@ -17,33 +21,7 @@ header{
     vertical-align: top;
 }
 
-#downMenu{
-    display: inline-block;
-    background-color: #313131;
-    width: 100%;
-    text-align: center;
-}
 
-#downMenu ul li:hover{
-    background-color: red;
-}
-
-#downMenu ul li{
-    display: inline-block;
-    margin: auto;
-}
-
-#downMenu a{
-    display: block;
-    padding: 20px 10px;
-    text-decoration: none;
-    color: whitesmoke;
-    font-size: 14px;
-}
-
-#downMenu ul{
-    list-style-type: none;
-}
 
 #upperMenu ul li{
     display: inline-block;

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DishesComponent } from './dishes/dishes.component';
 
 const appRoutes: Routes = [
 ];
@@ -20,6 +21,8 @@ const appRoutes: Routes = [
     ],
     declarations: [
         AppComponent,
+        DishesComponent,
+    DishesComponent
 ],
     bootstrap:    [ AppComponent ]
 })
