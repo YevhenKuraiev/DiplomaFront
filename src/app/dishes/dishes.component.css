@@ -1,7 +1,7 @@
 .dish{
     background-color: white;
     border: 1px solid lightgrey;
-    height: 250px;
+    height: 285px;
     width: 175px;
     margin: 10px;
     border-radius: 3px;
@@ -35,25 +35,27 @@
 }
 
 #description{
+    margin-top: 10px;
     font-size: 12px;
     color: dimgray;
+    text-align:center;
 }
 
 #price{
     text-transform: uppercase;
     color: red;
-
+    font-weight: bold;
 }
 
 #buy{
     text-decoration: none;
     display: inline-block;
     background-color: red;
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 5px;
     color: white;
     font-size: 12px;
-
+    margin-left: 20px;
 }
 
 

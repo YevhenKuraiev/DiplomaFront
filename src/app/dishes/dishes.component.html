@@ -1,6 +1,6 @@
 
-<div id="dishes" *ngFor="let dish of dishes">
-    <div class="dish">
+<div id="dishes" >
+    <div class="dish" *ngFor="let dish of dishes">
       <img src="data:image/JPEG;base64,{{dish?.image}}">
       <br>
       <p id="name">{{dish?.name}}</p>
@@ -12,17 +12,4 @@
         <a id="buy" href="#">В корзину</a>
       </div>
     </div>
-    <div class="dish">
-
-    </div>
-    <div class="dish">
-
-    </div>
-    <div class="dish">
-
-    </div>
-
-    <div class="dish">
-
-      </div>
 </div>
