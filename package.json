@@ -2,6 +2,7 @@
   "name": "deliveryfood",
   "version": "0.0.0",
   "license": "MIT",
+  "start": "ng serve --proxy-config proxy.conf.json",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

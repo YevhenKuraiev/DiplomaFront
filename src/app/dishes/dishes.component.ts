@@ -17,4 +17,8 @@ export class DishesComponent implements OnInit {
       this.httpService.getData('dishes').subscribe((data: Dish) => this.dishes = data);
   }
 
+  submit(id: string) {
+    this.httpService.addToCart(id);
+}
+
 }

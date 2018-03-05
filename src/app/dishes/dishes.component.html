@@ -9,7 +9,7 @@
       <br>
       <div style="margin-top:15px;">
         <span id="price">{{dish?.price}} грн</span>
-        <a id="buy" href="#">В корзину</a>
+        <button id="buy" (click)="submit(dish?.id)">В корзину</button>
       </div>
     </div>
 </div>
