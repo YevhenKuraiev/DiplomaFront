@@ -1,9 +1,16 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
+import { ContentType } from '@angular/http/src/enums';
 
 @Injectable()
 export class HttpService {
     apiUrl = 'http://localhost:60327/api/';
+    error: any;
     constructor(private http: HttpClient) {
 
      }
@@ -11,7 +18,9 @@ export class HttpService {
     getData(url: string) {
         return this.http.get(this.apiUrl + url);
     }
-    addToCart(id: string) {
-        return this.http.get('http://localhost:60327/api/Cart/1');
+    addToCart(dishId: string) {
+        const result = this.http.post('http://localhost:60327/Cart/AddToCart/', dishId).subscribe(
+            error => console.log(error));
+
     }
 }
