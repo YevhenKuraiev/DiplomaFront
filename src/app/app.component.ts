@@ -11,14 +11,4 @@ import { HttpService } from './services/http.service';
     providers: [HttpService]
 })
 
-
-export class AppComponent implements OnInit {
-    mylst = ['1', '2', '3', '4', '5'];
-
-    categories: CategoryModel;
-
-    constructor(private httpService: HttpService) {}
-    ngOnInit(): void {
-        this.httpService.getData('categories').subscribe((data: CategoryModel) => this.categories = data);
-    }
-}
+export class AppComponent { }

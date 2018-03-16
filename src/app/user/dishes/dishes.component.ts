@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Dish } from '../models/dishModel';
-import { HttpService } from '../services/http.service';
+import { Dish } from '../../models/dishModel';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-dishes',
