@@ -1,3 +1,4 @@
+import { CategoryModel } from './models/categoryModel';
 import { City } from './models/cityModel';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -14,10 +15,10 @@ import { HttpService } from './services/http.service';
 export class AppComponent implements OnInit {
     mylst = ['1', '2', '3', '4', '5'];
 
-    cities: City;
+    categories: CategoryModel;
 
     constructor(private httpService: HttpService) {}
     ngOnInit(): void {
-        this.httpService.getData('cities').subscribe((data: City) => this.cities = data);
+        this.httpService.getData('categories').subscribe((data: CategoryModel) => this.categories = data);
     }
 }

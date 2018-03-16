@@ -1,9 +1,8 @@
 <div id="downMenu">
     <ul>
-      <li><a href="#">Суши</a></li>
-      <li><a href="#">Супы</a></li>
-      <li><a href="#">Напитки</a></li>
-      <li><a href="#">Пиво</a></li>
+      <li *ngFor="let category of categories">
+        <a href="#">{{category?.name}}</a>
+      </li>
     </ul>
 </div>
 <app-dishes></app-dishes>
