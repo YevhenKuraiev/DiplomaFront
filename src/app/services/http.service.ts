@@ -12,15 +12,14 @@ export class HttpService {
     apiUrl = 'http://localhost:60326/api/';
     error: any;
     constructor(private http: HttpClient) {
-
-     }
+    }
 
     getData(url: string) {
         return this.http.get(this.apiUrl + url);
     }
-    addToCart(dishId: string) {
-        const result = this.http.post('http://localhost:60326/Cart/AddToCart/', dishId).subscribe(
-            error => console.log(error));
 
+    addToCart(dishId: string) {
+        const result = this.http.post('http://localhost:60326/Cart/AddToCart/', dishId)
+        .subscribe(error => console.log(error));
     }
 }
