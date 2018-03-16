@@ -9,7 +9,7 @@ import { ContentType } from '@angular/http/src/enums';
 
 @Injectable()
 export class HttpService {
-    apiUrl = 'http://localhost:60327/api/';
+    apiUrl = 'http://localhost:60326/api/';
     error: any;
     constructor(private http: HttpClient) {
 
@@ -19,7 +19,7 @@ export class HttpService {
         return this.http.get(this.apiUrl + url);
     }
     addToCart(dishId: string) {
-        const result = this.http.post('http://localhost:60327/Cart/AddToCart/', dishId).subscribe(
+        const result = this.http.post('http://localhost:60326/Cart/AddToCart/', dishId).subscribe(
             error => console.log(error));
 
     }
