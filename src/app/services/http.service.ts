@@ -21,6 +21,5 @@ export class HttpService {
     addToCart(dishId: string) {
         const result = this.http.post('http://localhost:60326/Cart/AddToCart/', dishId)
         .subscribe(error => console.log(error));
-
     }
 }
