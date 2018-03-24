@@ -6,10 +6,6 @@
   font-family: 'Fira Sans', Arial, Helvetica, sans-serif
 }
 
-body {
-  text-align: center;
-}
-
 header {
   background-color: #313131;
   width: 100%;
@@ -71,6 +67,7 @@ footer {
   background-color: #313131;
   padding: 30px 0px;
   font-size: 0.8em;
+  text-align: center;
 }
 
 footer>* {

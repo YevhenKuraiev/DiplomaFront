@@ -1,3 +1,20 @@
-<p>
-  adminCategories works!
-</p>
+<div id="leftColumn">
+  <mat-card [ngStyle]="{ display: showEditCategory?'block':'none'}">
+
+  </mat-card>
+
+  <mat-card>
+    <mat-list>
+      <mat-list-item>Pepper
+        <a mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </a>
+      </mat-list-item>
+    </mat-list>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </mat-card>
+</div>

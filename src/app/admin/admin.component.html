@@ -1,6 +1,11 @@
-<ul>
+<ul id="leftMenu">
   <li>
-    <a routerLink="dishes"></a>
+    <a *ngFor="let link of linkList" [routerLink]="link.link" routerLinkActive="activeLink">
+      <mat-icon>{{link.icon}}</mat-icon>&nbsp;
+      <span>{{link.name}}</span>
+    </a>
   </li>
 </ul>
-<router-outlet></router-outlet>
+<div id="adminContainer">
+  <router-outlet></router-outlet>
+</div>

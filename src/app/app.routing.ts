@@ -3,11 +3,6 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    component: UserComponent,
-  },
-  {
     path: 'admin',
     loadChildren: './admin/admin.module#AdminModule'
   }

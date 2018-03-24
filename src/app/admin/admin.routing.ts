@@ -2,10 +2,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminCategoriesComponent } from './adminCategories/adminCategories.component';
 import { AdminDishesComponent } from './adminDishes/adminDishes.component';
 import { AdminHomeComponent } from './adminHome/adminHome.component';
+import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
   {
     path: 'admin',
+    component: AdminComponent,
     children: [
       {
         path: '',

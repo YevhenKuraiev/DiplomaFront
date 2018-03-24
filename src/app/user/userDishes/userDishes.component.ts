@@ -3,11 +3,12 @@ import { Dish } from '../../models/dishModel';
 import { HttpService } from '../../services/http.service';
 
 @Component({
-  selector: 'app-dishes',
-  templateUrl: './dishes.component.html',
-  styleUrls: ['./dishes.component.css']
+  selector: 'app-user-dishes',
+  templateUrl: './userDishes.component.html',
+  styleUrls: ['./userDishes.component.css']
 })
-export class DishesComponent implements OnInit {
+
+export class UserDishesComponent implements OnInit {
   imageData: any;
   dishes: Dish;
 

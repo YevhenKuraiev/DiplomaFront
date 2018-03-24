@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user.component';
-import { DishesComponent } from './dishes/dishes.component';
+import { UserDishesComponent } from './userDishes/userDishes.component';
 import { UserRoutes } from './user.routing';
 
 
@@ -12,7 +12,7 @@ import { UserRoutes } from './user.routing';
   ],
   declarations: [
     UserComponent,
-    DishesComponent
+    UserDishesComponent
   ],
   bootstrap: [UserComponent]
 })

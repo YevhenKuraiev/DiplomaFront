@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCategoriesComponent implements OnInit {
 
+  showEditCategory = false;
+
   constructor() { }
 
   ngOnInit() {
