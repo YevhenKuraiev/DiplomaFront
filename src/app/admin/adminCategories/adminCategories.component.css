@@ -1,3 +1,20 @@
-#leftColumn{
+#listCategories{
     width: 30vw;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#rightColumn{
+    display: inline-block;
+    width: 30vw;
+}
+
+#editCategory{
+    width: 30vw;
+    margin-bottom: 15px;
+}
+
+mat-form-field{
+    width: 100%;
 }

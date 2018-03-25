@@ -9,17 +9,18 @@ import { HttpService } from '../../services/http.service';
 })
 
 export class UserDishesComponent implements OnInit {
+
   imageData: any;
   dishes: Dish;
 
+  constructor(private httpService: HttpService) { }
 
-  constructor(private httpService: HttpService) {}
   ngOnInit(): void {
-      this.httpService.getData('dishes').subscribe((data: Dish) => this.dishes = data);
+    this.httpService.getData('dishes').subscribe((data: Dish) => this.dishes = data);
   }
 
   submit(id: string) {
     this.httpService.addToCart(id);
-}
+  }
 
 }

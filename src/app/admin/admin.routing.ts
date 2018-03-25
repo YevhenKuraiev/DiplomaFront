@@ -3,6 +3,7 @@ import { AdminCategoriesComponent } from './adminCategories/adminCategories.comp
 import { AdminDishesComponent } from './adminDishes/adminDishes.component';
 import { AdminHomeComponent } from './adminHome/adminHome.component';
 import { AdminComponent } from './admin.component';
+import { AdminRestaurantsComponent } from './adminRestaurants/adminRestaurants.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: 'restaurants',
-        component: AdminCategoriesComponent
+        component: AdminRestaurantsComponent
       }
     ]
   }

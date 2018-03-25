@@ -8,13 +8,15 @@ import { AdminRestaurantsComponent } from './adminRestaurants/adminRestaurants.c
 import { AdminHomeComponent } from './adminHome/adminHome.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     AdminRoutes,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AdminComponent,
@@ -22,6 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminCategoriesComponent,
     AdminRestaurantsComponent,
     AdminHomeComponent
-]
+  ]
 })
 export class AdminModule { }

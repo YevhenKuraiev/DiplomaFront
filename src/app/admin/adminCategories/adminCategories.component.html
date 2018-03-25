@@ -1,20 +1,81 @@
-<div id="leftColumn">
-  <mat-card [ngStyle]="{ display: showEditCategory?'block':'none'}">
-
-  </mat-card>
-
-  <mat-card>
+<h1>
+  Категории
+</h1>
+<br>
+<div>
+  <mat-card id="listCategories">
     <mat-list>
-      <mat-list-item>Pepper
-        <a mat-icon-button>
+      <mat-list-item *ngFor="let category of categories; last as last">
+        <p mat-line>{{category.name}}</p>
+        <a mat-icon-button (click)="showEditCategory=true">
           <mat-icon>edit</mat-icon>
         </a>
         <a mat-icon-button>
           <mat-icon>delete</mat-icon>
         </a>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
       </mat-list-item>
     </mat-list>
     <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator>
   </mat-card>
+
+  <div id="rightColumn">
+    <form id="editCategory" [formGroup]="editCategoryForm" [ngStyle]="{display: showEditCategory?'inline-block':'none'}">
+      <mat-card>
+        <mat-card-header>
+          <mat-icon mat-card-avatar>edit</mat-icon>
+          <mat-card-title>
+            Редактирование
+          </mat-card-title>
+          <mat-card-subtitle>
+            Категория
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="Название категории" formControlName="name" required>
+            <mat-error *ngIf="editCategoryForm.get('name').getError('pattern')">
+              Название может содержать только буквы русского алфавита и должно начинаться с большой буквы
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="submit" mat-button [disabled]="editCategoryForm.invalid">
+            Сохранить
+          </button>
+          <button mat-button (click)="showEditCategory=false">
+            Отмена
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+
+    <form id="addCategory" [formGroup]="addCategoryForm">
+      <mat-card>
+        <mat-card-header>
+          <mat-icon mat-card-avatar>add</mat-icon>
+          <mat-card-title>
+            Добавление
+          </mat-card-title>
+          <mat-card-subtitle>
+            Категория
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput placeholder="Название категории" formControlName="name" required>
+            <mat-error *ngIf="addCategoryForm.get('name').getError('pattern')">
+              Название может содержать только буквы русского алфавита и должно начинаться с большой буквы
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="submit" mat-button [disabled]="addCategoryForm.invalid">
+            Добавить
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
 </div>
