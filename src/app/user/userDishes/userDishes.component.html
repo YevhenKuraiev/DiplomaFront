@@ -1,6 +1,6 @@
   <div id="dishes">
     <div class="dish" *ngFor="let dish of dishes">
-      <img src="data:image/JPEG;base64,{{dish?.image}}">
+      <img [src]="dish.image | saveUrl"/>
       <br>
       <p id="name">{{dish?.name}}</p>
       <br>

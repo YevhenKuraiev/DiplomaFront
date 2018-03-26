@@ -1,3 +1,4 @@
+import { SaveUrlPipe } from './../pipes/saveUrl.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user.component';
@@ -12,7 +13,8 @@ import { UserRoutes } from './user.routing';
   ],
   declarations: [
     UserComponent,
-    UserDishesComponent
+    UserDishesComponent,
+    SaveUrlPipe
   ],
   bootstrap: [UserComponent]
 })
