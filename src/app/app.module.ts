@@ -6,9 +6,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
-
 import { AppRoutes } from './app.routing';
-
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 
