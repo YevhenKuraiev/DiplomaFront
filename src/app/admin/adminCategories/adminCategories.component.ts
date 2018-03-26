@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-import { CategoryModel } from '../../models/categoryModel';
+import { Category } from '../../models/categoryModel';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -18,7 +18,7 @@ export class AdminCategoriesComponent implements OnInit {
   showEditCategory = false;
 
   imageData: any;
-  categories: CategoryModel[] = [];
+  categories: Category[] = [];
 
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 100];
@@ -40,10 +40,10 @@ export class AdminCategoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpService.getData('categories').subscribe((data: CategoryModel[]) => this.categories = data);
+    this.httpService.getData('categories').subscribe((data: Category[]) => this.categories = data);
   }
 
-  getCategories() {
+  sliceCategories() {
     if (this.pageEvent) {
       return this.categories.slice(
         (this.pageEvent.pageIndex * this.pageEvent.pageSize),
@@ -51,6 +51,14 @@ export class AdminCategoriesComponent implements OnInit {
     } else {
       return this.categories.slice(0, this.pageSize);
     }
+  }
+
+  postCategory() {
+    this.httpService.postData('categories', { name: this.addCategoryForm.get('name').value });
+  }
+
+  getKey(index: number, category: Category) {
+
   }
 
 }

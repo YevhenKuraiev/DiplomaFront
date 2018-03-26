@@ -1,5 +1,5 @@
 import { HttpService } from './../services/http.service';
-import { CategoryModel } from './../models/categoryModel';
+import { Category } from './../models/categoryModel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  categories: CategoryModel;
+  categories: Category;
 
   constructor(private httpService: HttpService) {}
   ngOnInit(): void {
-      this.httpService.getData('categories').subscribe((data: CategoryModel) => this.categories = data);
+      this.httpService.getData('categories').subscribe((data: Category) => this.categories = data);
   }
 
 }

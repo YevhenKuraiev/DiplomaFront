@@ -45,7 +45,7 @@ export class AdminDishesComponent implements OnInit {
     this.httpService.getData('dishes').subscribe((data: Dish[]) => this.dishes = data);
   }
 
-  getDishes() {
+  sliceDishes() {
     if (this.pageEvent) {
       return this.dishes.slice(
         (this.pageEvent.pageIndex * this.pageEvent.pageSize),

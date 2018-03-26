@@ -1,4 +1,4 @@
-import { CategoryModel } from './models/categoryModel';
+import { Category } from './models/categoryModel';
 import { City } from './models/cityModel';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
