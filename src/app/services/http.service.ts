@@ -10,10 +10,14 @@ import { Category } from '../models/categoryModel';
 
 @Injectable()
 export class HttpService {
-
+    private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     apiUrl = 'http://localhost:60326/api/';
     error: any;
     constructor(private http: HttpClient) { }
+
+    postDataWithFullUrl(fullUrl: string, dishId: string) {
+        return this.http.post(fullUrl, dishId);
+    }
 
     getData(url: string) {
         return this.http.get(this.apiUrl + url);
@@ -21,9 +25,5 @@ export class HttpService {
 
     postData(url: string, body: any) {
         return this.http.post(this.apiUrl + url, body);
-    }
-
-    addToCart(dishId: string) {
-        return this.http.post('http://localhost:60326/Cart/AddToCart/', dishId);
     }
 }
