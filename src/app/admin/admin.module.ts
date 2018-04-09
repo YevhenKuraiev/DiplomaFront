@@ -6,7 +6,7 @@ import { AdminDishesComponent } from './adminDishes/adminDishes.component';
 import { AdminCategoriesComponent } from './adminCategories/adminCategories.component';
 import { AdminRestaurantsComponent } from './adminRestaurants/adminRestaurants.component';
 import { AdminHomeComponent } from './adminHome/adminHome.component';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from '../material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 

@@ -8,7 +8,7 @@
       <br>
       <div style="margin-top:15px;">
         <span id="price">{{dish?.price}} грн</span>
-        <button id="buy" (click)="submit(dish?.id)">В корзину</button>
+        <button id="buy" (click)="addToCart(dish?.id)" [disabled]="dishes.isAdded===true">В корзину</button>
       </div>
     </div>
   </div>

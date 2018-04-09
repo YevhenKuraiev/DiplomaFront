@@ -1,0 +1,13 @@
+<div id="dishes">
+  <div class="dish" *ngFor="let dish of cartProducts">
+    <img [src]="dish.image | saveUrl" width="100" height="100" />
+    <br>
+    <p id="name">{{dish?.name}}</p>
+    <br>
+    <div style="margin-top:15px;">
+      <span id="price">{{dish?.price}} грн</span>
+    </div>
+  </div>
+</div>
+
+<button (click)="removeAll()">Очистить корзину</button>

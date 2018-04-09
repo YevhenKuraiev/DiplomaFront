@@ -29,3 +29,20 @@
 #userContent{
     text-align: center;
 }
+
+#upperMenu > *{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+mat-icon{
+    color: white;
+    position: absolute;
+    right: 15px;
+    top:15px;
+}
+
+header{
+    position: relative;
+
+}
