@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../../models/orderModel';
 
 @Component({
   selector: 'app-cart',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartProducts: any;
+  cartProducts = [];
   bill: any;
 
   constructor() { }
@@ -19,6 +20,13 @@ export class CartComponent implements OnInit {
     const data = localStorage.getItem('cart');
     if (data !== null) {
       this.cartProducts = JSON.parse(data);
+      let counter = 0;
+      for (const product of this.cartProducts) {
+        if ((this.cartProducts[counter] as Order).quantity === 0) {
+          (this.cartProducts[counter] as Order).quantity++;
+        }
+        counter++;
+      }
     } else {
       this.cartProducts = [];
     }

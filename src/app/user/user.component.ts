@@ -1,6 +1,8 @@
 import { HttpService } from './../services/http.service';
 import { Category } from './../models/categoryModel';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { CartComponent } from './cart/cart.component';
 
 @Component({
   selector: 'app-user',
@@ -10,10 +12,16 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
 
   categories: Category;
-
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, public dialog: MatDialog) { }
   ngOnInit(): void {
-      this.httpService.getData('categories').subscribe((data: Category) => this.categories = data);
+    this.httpService.getData('categories').subscribe((data: Category) => this.categories = data);
+  }
+
+  openCart(): void {
+    const dialogRef = this.dialog.open(CartComponent, {
+      width: '2000px',
+      minHeight: '500px'
+    });
   }
 
 }

@@ -44,5 +44,8 @@ mat-icon{
 
 header{
     position: relative;
+}
 
+#cart{
+    cursor: pointer;
 }

@@ -3,6 +3,7 @@ import { Dish } from '../../models/dishModel';
 import { HttpService } from '../../services/http.service';
 import { error } from 'util';
 import { Router } from '@angular/router';
+import { Order } from '../../models/orderModel';
 
 @Component({
   selector: 'app-user-dishes',
@@ -29,13 +30,24 @@ export class UserDishesComponent implements OnInit {
   }
 
   addToCart(index) {
-    const dishes = this.dishes[index];
+    --index;
+    const dish = this.dishes[index];
     let cartData = [];
     const data = localStorage.getItem('cart');
     if (data !== null) {
       cartData = JSON.parse(data);
+      let counter = 0;
+      for (const i of cartData) {
+        if ((cartData[counter] as Order).name === dish.name) {
+          (cartData[counter] as Order).quantity++;
+          this.updateCartData(cartData);
+          localStorage.setItem('cart', JSON.stringify(cartData));
+          return;
+        }
+        counter++;
+      }
     }
-    cartData.push(dishes);
+    cartData.push(dish);
     this.updateCartData(cartData);
     localStorage.setItem('cart', JSON.stringify(cartData));
     this.dishes[index].isAdded = true;
