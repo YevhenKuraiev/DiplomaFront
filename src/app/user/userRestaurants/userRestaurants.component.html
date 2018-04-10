@@ -1,0 +1,10 @@
+<div id="restaurants">
+  <div class="restaurant" *ngFor="let restaurant of restaurants">
+    <img [src]="restaurant.image | saveUrl" width="350" height="200"/>
+    <br>
+    <p id="name">{{restaurant?.name}}</p>
+    <br>
+    <p id="description">{{restaurant?.description}}</p>
+    <br>
+  </div>
+</div>

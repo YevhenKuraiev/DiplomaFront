@@ -7,6 +7,7 @@ import { UserDishesComponent } from './userDishes/userDishes.component';
 import { UserRoutes } from './user.routing';
 import { CartComponent } from './cart/cart.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { UserRestaurantsComponent } from './userRestaurants/userRestaurants.component';
 
 @NgModule({
   imports:
@@ -21,8 +22,9 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
     UserComponent,
     UserDishesComponent,
     SaveUrlPipe,
-    CartComponent
-  ],
+    CartComponent,
+    UserRestaurantsComponent
+],
   bootstrap:
   [
     UserComponent
