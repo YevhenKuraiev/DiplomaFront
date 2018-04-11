@@ -1,0 +1,32 @@
+#restaurant{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    background-color: black;
+
+}
+
+#restaurant > *{
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+}
+
+#restaurantComponent{
+    padding: 30px 150px 50px 300px;
+    background-color:#7c7a7a;
+    text-align: left;
+}
+
+#name{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#description{
+    width: 1000px;
+}
+
+#insideRestaurant > *{
+    margin-left: 20px;
+    padding: 10px;
+}

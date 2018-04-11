@@ -1,10 +1,15 @@
-<div id="restaurants">
-  <div class="restaurant" *ngFor="let restaurant of restaurants">
-    <img [src]="restaurant.image | saveUrl" width="350" height="200"/>
-    <br>
-    <p id="name">{{restaurant?.name}}</p>
-    <br>
-    <p id="description">{{restaurant?.description}}</p>
-    <br>
+<div>
+  <div id="restaurantComponent" *ngFor="let restaurant of restaurants">
+    <div id="restaurant">
+      <img [src]="restaurant.image | saveUrl" width="350" height="200" />
+      <div id="insideRestaurant">
+        <p id="name">{{restaurant?.name}}</p>
+        <p id="description">{{restaurant.description}}</p>
+        <p>{{restaurant?.address}}</p>
+        <p>Минимальная сумма заказа: {{restaurant?.minimunSum}}</p>
+      </div>
+
+    </div>
   </div>
+
 </div>

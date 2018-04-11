@@ -18,10 +18,7 @@ export class UserComponent implements OnInit {
   }
 
   openCart(): void {
-    const dialogRef = this.dialog.open(CartComponent, {
-      width: '2000px',
-      minHeight: '500px'
-    });
+    const dialogRef = this.dialog.open(CartComponent);
   }
 
 }

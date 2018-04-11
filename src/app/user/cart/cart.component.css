@@ -1,3 +1,28 @@
-#dishes > *{
+#dish > *{
     display: inline-block;
+    vertical-align: top;
+}
+
+hr{
+    display: block!important;
+    margin-top: 10px;
+}
+
+#dish{
+    padding: 20px;
+    width: 500px;
+    height: 100px;
+}
+
+button{
+    margin-left: 20px;
+}
+
+
+#insideDish{
+    margin-left: 10px;
+}
+
+#name{
+    font-weight: bold;
 }
