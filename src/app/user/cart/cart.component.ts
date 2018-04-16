@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../../models/orderModel';
 import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { HttpService } from '../../services/http.service';
+import { OrderingComponent } from '../ordering/ordering.component';
+import { UserComponent } from '../user.component';
+import { Dish } from '../../models/dishModel';
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +14,8 @@ import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatDialogCon
 export class CartComponent implements OnInit {
   cartProducts = [];
   bill: any;
-
-  constructor() { }
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.initiateData();
@@ -33,13 +37,6 @@ export class CartComponent implements OnInit {
     }
   }
 
-  updateTotal() {
-    this.bill = 0;
-    for (const i of this.cartProducts) {
-      this.bill = this.bill + this.cartProducts[i].price * this.cartProducts[i].qt;
-    }
-  }
-
   removeItem(id) {
     this.cartProducts.splice(id, 1);
     if (this.cartProducts.length) {
@@ -54,13 +51,10 @@ export class CartComponent implements OnInit {
     localStorage.clear();
   }
 
-  payBill() {
-    if (this.cartProducts.length) {
-      localStorage.removeItem('cart');
-      this.initiateData();
-      alert("Your bill is: " + this.bill);
-    } else {
-      alert("No items in cart");
+  ordering() {
+    if (this.cartProducts.length > 0) {
+      this.dialog.closeAll();
+      this.dialog.open(OrderingComponent);
     }
   }
 

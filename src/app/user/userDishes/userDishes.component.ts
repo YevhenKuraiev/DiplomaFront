@@ -47,6 +47,7 @@ export class UserDishesComponent implements OnInit {
         counter++;
       }
     }
+    dish.quantity++;
     cartData.push(dish);
     this.updateCartData(cartData);
     localStorage.setItem('cart', JSON.stringify(cartData));

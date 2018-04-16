@@ -3,6 +3,7 @@ import { Category } from './../models/categoryModel';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
 import { CartComponent } from './cart/cart.component';
+import { OrderingComponent } from './ordering/ordering.component';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,6 @@ import { CartComponent } from './cart/cart.component';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
   categories: Category;
   constructor(private httpService: HttpService, public dialog: MatDialog) { }
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   }
 
   openCart(): void {
-    const dialogRef = this.dialog.open(CartComponent);
+    this.dialog.open(CartComponent);
   }
 
 }

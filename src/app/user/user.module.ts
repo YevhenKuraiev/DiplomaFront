@@ -8,6 +8,8 @@ import { UserRoutes } from './user.routing';
 import { CartComponent } from './cart/cart.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { UserRestaurantsComponent } from './userRestaurants/userRestaurants.component';
+import { OrderingComponent } from './ordering/ordering.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports:
@@ -15,15 +17,18 @@ import { UserRestaurantsComponent } from './userRestaurants/userRestaurants.comp
     CommonModule,
     UserRoutes,
     MaterialModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
   ],
   declarations:
   [
     UserComponent,
     UserDishesComponent,
     SaveUrlPipe,
-    CartComponent,
-    UserRestaurantsComponent
+    CartComponent,
+    OrderingComponent,
+    UserRestaurantsComponent,
+    OrderingComponent
 ],
   bootstrap:
   [

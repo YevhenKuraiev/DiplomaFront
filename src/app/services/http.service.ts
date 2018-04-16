@@ -24,6 +24,7 @@ export class HttpService {
     }
 
     postData(url: string, body: any) {
-        return this.http.post(this.apiUrl + url, body);
+        const headers = new HttpHeaders({'Content-Type': 'application/json'});
+        return this.http.post(this.apiUrl + url, JSON.stringify(body), {headers: headers});
     }
 }

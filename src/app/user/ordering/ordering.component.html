@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Оформление заказа</h1>
+<mat-dialog-content>
+  <!-- <form [formGroup]="orderingForm" >
+      <div class="form-group">
+        <label for="phoneNumber">Номер телефона</label>
+        <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="adress">Адрес доставки</label>
+        <input type="text" class="form-control" name="adress" id="adress" required>
+      </div>
+
+      <button type="submit" class="btn btn-success" (click)="buy()">Купить</button>
+
+  </form> -->
+
+
+
+
+  <div>
+    <form [formGroup]="orderingForm">
+      <label for="phoneNumber">Номер телефона</label>
+      <input type="text" formControlName="phoneNumber" />
+      <label for="adress">Адрес доставки</label>
+      <input type="text" formControlName="address" />
+      <button type="submit" (click)="buy()" aria-hidden="true">Купить</button>
+    </form>
+  </div>
+</mat-dialog-content>
