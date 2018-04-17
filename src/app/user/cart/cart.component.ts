@@ -13,7 +13,7 @@ import { Dish } from '../../models/dishModel';
 })
 export class CartComponent implements OnInit {
   cartProducts = [];
-  bill: any;
+  totalPrice: number;
   constructor(public dialog: MatDialog) {
   }
 
@@ -32,8 +32,18 @@ export class CartComponent implements OnInit {
         }
         counter++;
       }
+      this.updateTotalPrice();
     } else {
       this.cartProducts = [];
+    }
+  }
+
+  updateTotalPrice() {
+    this.totalPrice = 0;
+    let counter = 0;
+    for (const i of this.cartProducts) {
+      this.totalPrice += (this.cartProducts[counter] as Dish).price * (this.cartProducts[counter] as Order).quantity;
+      counter++;
     }
   }
 

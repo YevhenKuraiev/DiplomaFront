@@ -10,6 +10,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { UserRestaurantsComponent } from './userRestaurants/userRestaurants.component';
 import { OrderingComponent } from './ordering/ordering.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SuccessOrderComponent } from './SuccessOrder/SuccessOrder.component';
 
 @NgModule({
   imports:
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     OrderingComponent,
     UserRestaurantsComponent,
-    OrderingComponent
+    OrderingComponent,
+    SuccessOrderComponent
 ],
   bootstrap:
   [

@@ -4,6 +4,7 @@ import { UserDishesComponent } from './userDishes/userDishes.component';
 import { UserComponent } from './user.component';
 import { UserRestaurantsComponent } from './userRestaurants/userRestaurants.component';
 import { OrderingComponent } from './ordering/ordering.component';
+import { SuccessOrderComponent } from './SuccessOrder/SuccessOrder.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
         path: 'ordering',
         pathMatch: 'full',
         component: OrderingComponent
+      },
+      {
+        path: 'successOrder',
+        pathMatch: 'full',
+        component: SuccessOrderComponent
       }
     ]
   }
