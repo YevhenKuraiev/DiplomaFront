@@ -1,3 +1,4 @@
+import { CourierComponent } from './../courier/courier.component';
 import { MaterialModule } from './../material.module';
 import { SaveUrlPipe } from './../pipes/saveUrl.pipe';
 import { NgModule } from '@angular/core';

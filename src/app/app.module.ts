@@ -1,3 +1,4 @@
+import { CourierModule } from './courier/courier.module';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { AdminModule } from './admin/admin.module';
         HttpClientModule,
         UserModule,
         AdminModule,
+        CourierModule,
         AppRoutes,
         ReactiveFormsModule,
     ],

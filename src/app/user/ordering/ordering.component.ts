@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { MatDialog } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Order } from '../../models/orderModel';
 import { Dish } from '../../models/dishModel';
 import { SuccessOrderComponent } from '../SuccessOrder/SuccessOrder.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { } from '@types/googlemaps';
 
 @Component({
   selector: 'app-ordering',
@@ -17,6 +18,9 @@ export class OrderingComponent implements OnInit {
   cartProducts: any;
   orderingForm: FormGroup;
   totalPrice: number;
+  @ViewChild('gmap') gmapElement: any;
+  map: google.maps.Map;
+  
   constructor(private formBuilder: FormBuilder, public dialog: MatDialog, private httpService: HttpService) {
   }
 
@@ -26,6 +30,14 @@ export class OrderingComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       address: ['', Validators.required]
     });
+
+    const mapProp = {
+      center: new google.maps.LatLng(49.9963457, 36.2328941),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+
   }
 
   updateTotalPrice() {
