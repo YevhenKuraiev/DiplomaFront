@@ -23,6 +23,10 @@ export class HttpService {
         return this.http.get(this.apiUrl + url);
     }
 
+    async getDataAsync(url: string) {
+        return await this.http.get(this.apiUrl + url);
+    }
+
     postData(url: string, body: any) {
         const headers = new HttpHeaders({'Content-Type': 'application/json'});
         return this.http.post(this.apiUrl + url, JSON.stringify(body), {headers: headers});

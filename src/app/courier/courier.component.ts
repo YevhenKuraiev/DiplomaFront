@@ -1,3 +1,5 @@
+import { ServerOrderModel } from './../models/serverOrderModel';
+import { error } from 'util';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { Route } from '../models/route';
@@ -9,12 +11,34 @@ import { RouteInfo } from '../models/routeInfo';
   styleUrls: ['./courier.component.css']
 })
 export class CourierComponent implements OnInit {
-  routesInfo: any;
+  routesInfo: RouteInfo[] = [];
+  orders: ServerOrderModel[] = [];
+  totalDistance = 0;
+  loading = true;
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.httpService.getData('routes').subscribe((data: RouteInfo) => this.routesInfo = data);
+
+    this.ShowRoutes();
+    this.ShowOrders();
+  }
+
+  private ShowRoutes() {
+    this.httpService.getData('routes').subscribe((data: RouteInfo[]) => this.routesInfo = data,
+      () => console.log(error),
+      () => {
+        this.loading = false;
+        this.routesInfo.forEach(x => this.totalDistance += x.distance);
+        this.totalDistance /= 1000;
+      });
+  }
+
+  private ShowOrders() {
+    this.httpService.getData('orders').subscribe((data: ServerOrderModel[]) => this.orders = data,
+      () => console.log(error),
+      () => {
+      });
   }
 
 }

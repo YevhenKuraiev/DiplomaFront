@@ -1,3 +1,4 @@
+import { NguiMapModule } from '@ngui/map';
 import { CourierComponent } from './../courier/courier.component';
 import { MaterialModule } from './../material.module';
 import { SaveUrlPipe } from './../pipes/saveUrl.pipe';
@@ -21,6 +22,7 @@ import { SuccessOrderComponent } from './SuccessOrder/SuccessOrder.component';
     MaterialModule,
     MatDialogModule,
     ReactiveFormsModule,
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBP1XG4Z5nph35aVskXQuhBmESwZc3_JXU'})
   ],
   declarations:
   [

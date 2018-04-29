@@ -1,0 +1,13 @@
+ngui-map{
+    width: 500px;
+    height: 300px;
+}
+
+mat-dialog-content{
+    width: 500px;
+    height: 800px;
+}
+
+mat-form-field{
+    width: 500px!important;
+}

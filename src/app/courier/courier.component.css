@@ -1,0 +1,41 @@
+#loader {
+  display: flex;
+  justify-content: center;
+  /*Центрирование по горизонтали*/
+  align-items: center;
+  height: 100vh;
+}
+
+#loader>div {
+  width: 150px;
+}
+
+mat-progress-spinner {
+  display: block;
+  width: 150px;
+}
+
+table * {
+    border: 0px;
+}
+
+table {
+    border-spacing: 0px;
+    width: 100vw;
+}
+
+table th {
+  background-color: lightgray;
+  text-align: center;
+  padding: 5px;
+}
+
+table td {
+  padding: 5px;
+  text-align: center;
+  font-weight: normal;
+}
+
+tr:nth-child(2n) {
+  background: #f0f0f0;
+}

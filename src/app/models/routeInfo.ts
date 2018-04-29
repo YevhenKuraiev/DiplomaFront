@@ -1,4 +1,4 @@
 export class RouteInfo {
-    route: string;
+    fullRoute: string;
     distance: number;
 }

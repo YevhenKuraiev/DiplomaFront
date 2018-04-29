@@ -1,17 +1,22 @@
 <h1 mat-dialog-title>Оформление заказа</h1>
-<mat-dialog-content>
-  <form [formGroup]="orderingForm">
-    <mat-form-field>
-      <input matInput type="text" placeholder="Номер телефона" formControlName="phoneNumber" />
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Адрес доставки" formControlName="address" />
-    </mat-form-field>
-    <div #gmap style="width:400px;height:400px"></div>
-    <br>
-    <button mat-raised-button type="submit" (click)="buy()" aria-hidden="true">Отправить</button>
-    <br>
-    <br>
-  </form>
-</mat-dialog-content>
+<form [formGroup]="orderingForm">
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Номер телефона" formControlName="phoneNumber" />
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Адрес доставки" formControlName="address" [(ngModel)]="address">
+  </mat-form-field>
+
+  <ngui-map zoom="13" center="Харьков, Украина" (mapReady$)="onMapReady($event)" (mapClick)="onMapClick($event)" (idle)="onIdle($event)">
+    <marker *ngFor="let pos of positions" [position]="pos" (initialized$)="onMarkerInit($event)"></marker>
+  </ngui-map>
+
+  <br>
+  <button mat-raised-button type="submit" (click)="buy()" aria-hidden="true">Отправить</button>
+  <br>
+  <br>
+</form>

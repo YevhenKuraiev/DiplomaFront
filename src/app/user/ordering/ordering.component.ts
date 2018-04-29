@@ -7,6 +7,7 @@ import { Dish } from '../../models/dishModel';
 import { SuccessOrderComponent } from '../SuccessOrder/SuccessOrder.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { } from '@types/googlemaps';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-ordering',
@@ -18,9 +19,10 @@ export class OrderingComponent implements OnInit {
   cartProducts: any;
   orderingForm: FormGroup;
   totalPrice: number;
-  @ViewChild('gmap') gmapElement: any;
-  map: google.maps.Map;
-  
+  positions = [];
+  address: string;
+  geocoder = new google.maps.Geocoder();
+
   constructor(private formBuilder: FormBuilder, public dialog: MatDialog, private httpService: HttpService) {
   }
 
@@ -31,14 +33,22 @@ export class OrderingComponent implements OnInit {
       address: ['', Validators.required]
     });
 
-    const mapProp = {
-      center: new google.maps.LatLng(49.9963457, 36.2328941),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-
   }
+
+  onMapClick(event) {
+    this.positions.pop();
+    this.positions.push(event.latLng);
+    this.geocoder.geocode({'location': event.latLng}, (results, status) => {
+       for (let i = 0, len = results.length; i < len; i++) {
+        this.address = results[i].formatted_address;
+        break;
+       }
+    });
+
+    event.target.panTo(event.latLng);
+  }
+
+
 
   updateTotalPrice() {
     this.totalPrice = 0;
@@ -71,4 +81,8 @@ export class OrderingComponent implements OnInit {
 
     }
   }
+
+  
+
+  
 }

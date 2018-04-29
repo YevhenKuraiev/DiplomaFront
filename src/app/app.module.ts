@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppRoutes } from './app.routing';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
+import { NguiMapModule} from '@ngui/map';
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import { AdminModule } from './admin/admin.module';
         CourierModule,
         AppRoutes,
         ReactiveFormsModule,
+
     ],
     declarations: [
         AppComponent,

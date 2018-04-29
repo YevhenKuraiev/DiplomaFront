@@ -1,9 +1,39 @@
-<p>
-  courier works!
-</p>
+<div id="loader" *ngIf="loading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
 
-<ul>
-  <li *ngFor="let routeInfo of routesInfo">
-    <p>{{routeInfo.route}}</p>
-  </li>
-</ul>
+<div id="content" *ngIf="!loading">
+
+  <ul>
+    <li >
+      <table>
+        <th>Номер заказа</th>
+        <th>Номер телефона заказчика</th>
+        <th>Сумма заказа</th>
+        <th>Время заказа</th>
+        <th>Адресс доставки</th>
+        <th>Статус</th>
+        <tr *ngFor="let order of orders">
+            <td>{{order.id}}</td>
+            <td>{{order.phoneNumber}}</td>
+            <td>{{order.orderPrice}}</td>
+            <td>{{order.dateTime}}</td>
+            <td>{{order.deliveryAddress}}</td>
+            <td><mat-button-toggle>Выполнить</mat-button-toggle></td>
+        </tr>
+      </table>
+
+      <br>
+      <hr>
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let routeInfo of routesInfo">
+      {{routeInfo.fullRoute}}</li>
+  </ul>
+  <hr>
+
+
+  <p>Длина маршрута: {{totalDistance | number : '1.1-1'}} км</p>
+</div>
