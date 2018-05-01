@@ -27,3 +27,29 @@ hr{
 .mat-dialog-content{
     padding-left: 20px;
 }
+
+#buttons button{
+    display: inline-block;
+}
+
+#buttons{
+    position: relative;
+}
+
+#orderButton{
+    position: absolute;
+    right: 0px;
+}
+
+#totalPrice{
+    position: absolute;
+    right: 0px;
+}
+
+#header{
+    position: relative;
+}
+
+#header *{
+    display: inline-block;
+}

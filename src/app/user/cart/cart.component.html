@@ -1,21 +1,25 @@
-<h1 mat-dialog-title>Корзина покупок</h1>
-<mat-dialog-content>
-  <div id="dishes">
-    <div id="dish" *ngFor="let dish of cartProducts">
+<div id="header">
+  <h1 mat-dialog-title>Корзина покупок</h1>
+  <h1 mat-dialog-title id="totalPrice">сумма заказа: {{totalPrice}} грн</h1>
+</div>
+<div id="dishes">
+  <mat-dialog-content>
+    <div id="dish" *ngFor="let dish of cartProducts; let last = last">
       <img [src]="dish.image | saveUrl" width="100" height="100" />
       <div id="insideDish">
         <p id="name">{{dish?.name}}</p>
         <p id="price">Цена за 1 шт: {{dish?.price}} грн</p>
         <p>Количество: {{dish?.quantity}}</p>
       </div>
-      <hr>
+      <hr *ngIf="!last">
     </div>
-    <br>
-    <label>Сумма заказа: {{totalPrice}}</label>
+  </mat-dialog-content>
+  <br>
 
-    <br>
-    <button mat-button (click)="removeAll()">Очистить корзину</button>
-    <br>
-    <button mat-button (click)="ordering()">Оформить заказ</button>
+
+  <br>
+  <div id="buttons">
+    <button id="clearCartButton" mat-raised-button color="warn" (click)="removeAll()">Очистить корзину</button>
+    <button id="orderButton" mat-raised-button color="primary" (click)="ordering()">Оформить заказ</button>
   </div>
-</mat-dialog-content>
+</div>
