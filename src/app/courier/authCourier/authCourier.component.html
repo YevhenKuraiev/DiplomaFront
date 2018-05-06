@@ -1,0 +1,26 @@
+<div>
+  <mat-card>
+    <mat-card-title mat-dialog-title>Авторизация курьера</mat-card-title>
+
+    <form [formGroup]="authForm">
+
+      <br>
+
+      <mat-form-field>
+        <input matInput type="text" placeholder="Email" formControlName="email" [(ngModel)]="email"/>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field>
+        <input matInput type="text" placeholder="Пароль" formControlName="password" [(ngModel)]="password"/>
+      </mat-form-field>
+
+      <br>
+
+      <button mat-raised-button type="submit" (click)="login()" aria-hidden="true">Войти</button>
+      <br>
+      <br>
+    </form>
+  </mat-card>
+</div>

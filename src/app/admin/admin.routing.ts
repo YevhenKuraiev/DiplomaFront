@@ -1,3 +1,6 @@
+import { ErrorComponent } from './../error/error.component';
+import { AddCourierComponent } from './adminCouriers/addCourier/addCourier.component';
+import { AdminCouriersComponent } from './adminCouriers/adminCouriers.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminCategoriesComponent } from './adminCategories/adminCategories.component';
 import { AdminDishesComponent } from './adminDishes/adminDishes.component';
@@ -30,6 +33,18 @@ const routes: Routes = [
       {
         path: 'restaurants',
         component: AdminRestaurantsComponent
+      },
+      {
+        path: 'couriers',
+        component: AdminCouriersComponent
+      },
+      {
+        path: 'addCouriers',
+        component: AddCourierComponent
+      },
+      {
+        path: 'error',
+        component: ErrorComponent
       }
     ]
   }

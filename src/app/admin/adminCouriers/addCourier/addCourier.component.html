@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Добавление курьера</h1>
+<form [formGroup]="addingForm">
+
+  <br>
+  
+  <mat-form-field>
+    <input matInput type="text" placeholder="Номер телефона" formControlName="phoneNumber" />
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Пароль" formControlName="password" />
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Имя" formControlName="firstName" />
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Фамилия" formControlName="lastName" />
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Email" formControlName="email" />
+  </mat-form-field>
+
+  <br>
+
+  <button mat-raised-button type="submit" (click)="AddCourier()" aria-hidden="true">Добавить курьера</button>
+  <br>
+  <br>
+</form>

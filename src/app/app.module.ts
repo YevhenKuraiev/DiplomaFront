@@ -1,3 +1,4 @@
+import { AddCourierComponent } from './admin/adminCouriers/addCourier/addCourier.component';
 import { CourierModule } from './courier/courier.module';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { AppRoutes } from './app.routing';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { NguiMapModule} from '@ngui/map';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
     imports: [
@@ -25,7 +27,8 @@ import { NguiMapModule} from '@ngui/map';
 
     ],
     declarations: [
-        AppComponent,
+        AppComponent,
+    ErrorComponent
 ],
     bootstrap:    [ AppComponent ]
 })

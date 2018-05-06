@@ -1,3 +1,4 @@
+import { AddCourierComponent } from './../admin/adminCouriers/addCourier/addCourier.component';
 import { NguiMapModule } from '@ngui/map';
 import { CourierComponent } from './../courier/courier.component';
 import { MaterialModule } from './../material.module';
@@ -33,7 +34,8 @@ import { SuccessOrderComponent } from './SuccessOrder/SuccessOrder.component';
     OrderingComponent,
     UserRestaurantsComponent,
     OrderingComponent,
-    SuccessOrderComponent
+    SuccessOrderComponent,
+
 ],
   bootstrap:
   [

@@ -27,6 +27,11 @@ export class AdminComponent implements OnInit {
       name: 'Рестораны',
       link: 'restaurants',
       icon: 'restaurant'
+    },
+    {
+      name: 'Курьеры',
+      link: 'couriers',
+      icon: 'perm_identity'
     }
   ];
 
