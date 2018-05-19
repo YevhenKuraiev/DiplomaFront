@@ -44,6 +44,7 @@ export class AddCourierComponent implements OnInit {
           this.addingForm.reset();
           this.dialog.closeAll();
           this.dialog.open(SuccessOrderComponent);
+          setTimeout(() => window.location.reload(), 1000);
         }, error => {
           this.dialog.open(ErrorComponent);
         });

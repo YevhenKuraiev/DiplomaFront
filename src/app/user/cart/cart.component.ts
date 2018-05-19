@@ -59,6 +59,8 @@ export class CartComponent implements OnInit {
   removeAll() {
     this.cartProducts = [];
     localStorage.clear();
+    window.location.reload();
+    this.dialog.closeAll();
   }
 
   ordering() {

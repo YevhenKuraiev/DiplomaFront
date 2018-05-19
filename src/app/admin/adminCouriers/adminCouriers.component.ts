@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material';
 export class AdminCouriersComponent implements OnInit {
 
   users: UserModel[] = [];
+
   constructor(private httpService: HttpService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -23,6 +24,8 @@ export class AdminCouriersComponent implements OnInit {
   addCourier() {
     this.dialog.open(AddCourierComponent);
   }
+
+
 
 
 }

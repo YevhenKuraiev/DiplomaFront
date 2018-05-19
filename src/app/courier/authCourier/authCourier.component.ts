@@ -55,7 +55,6 @@ export class AuthCourierComponent implements OnInit {
           this.router.navigate(['courier']);
        }
       }, error => {
-        debugger;
         console.log(error);
         this.dialog.open(ErrorComponent);
       },

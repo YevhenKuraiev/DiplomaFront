@@ -54,8 +54,11 @@ export class AdminCategoriesComponent implements OnInit {
   }
 
   postCategory() {
-    this.httpService.postData('categories', { name: this.addCategoryForm.get('name').value });
-  }
+    this.httpService.postData('categories', { name: this.addCategoryForm.get('name').value })
+    .subscribe(
+      response => window.location.reload(),
+      error => console.log(error));
+    }
 
   getKey(index: number, category: Category) {
 
