@@ -1,3 +1,7 @@
+import { NguiMapModule } from '@ngui/map';
+import { ConfigService } from './../services/config.service';
+import { HttpService } from './../services/http.service';
+import { UserService } from './../services/user.service';
 import { MaterialModule } from './../material.module';
 import { CourierRoutes } from './courier.routing';
 import { NgModule } from '@angular/core';
@@ -12,11 +16,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CourierRoutes,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBP1XG4Z5nph35aVskXQuhBmESwZc3_JXU'})
+
   ],
   declarations: [
     CourierComponent,
     AuthCourierComponent,
+],
+providers: [
+  UserService,
+  HttpService,
+  ConfigService
 ]
 })
 export class CourierModule { }

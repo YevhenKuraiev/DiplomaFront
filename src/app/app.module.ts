@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { AddCourierComponent } from './admin/adminCouriers/addCourier/addCourier.component';
 import { CourierModule } from './courier/courier.module';
 import { HttpModule } from '@angular/http';
@@ -27,7 +28,8 @@ import { ErrorComponent } from './error/error.component';
 
     ],
     declarations: [
-        AppComponent,
+        AppComponent
+,
     ErrorComponent
 ],
     bootstrap:    [ AppComponent ]

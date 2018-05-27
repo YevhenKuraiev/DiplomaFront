@@ -1,3 +1,4 @@
+import { UserService } from './../services/user.service';
 import { AddCourierComponent } from './../admin/adminCouriers/addCourier/addCourier.component';
 import { NguiMapModule } from '@ngui/map';
 import { CourierComponent } from './../courier/courier.component';

@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { UserService } from './../../services/user.service';
+import { Router, CanActivate } from '@angular/router';
 import { ErrorComponent } from './../../error/error.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from './../../services/http.service';
@@ -26,7 +27,7 @@ export class AuthCourierComponent implements OnInit {
   password: string;
   auth_token: string;
   constructor(private httpService: HttpService, private formBuilder: FormBuilder,
-    public dialog: MatDialog, private router: Router) {
+    public dialog: MatDialog, private router: Router, private user: UserService) {
     this.loggedIn = !!localStorage.getItem('auth_token');
     this._authNavStatusSource.next(this.loggedIn);
   }
@@ -39,26 +40,37 @@ export class AuthCourierComponent implements OnInit {
   }
 
   login() {
-    const AuthModel = {
-    email : this.email,
-    password : this.password,
-    };
-    return this.httpService.postData('auth', AuthModel)
-      .subscribe((result: JWTModel) => {
-        localStorage.setItem('auth_token', result.auth_token);
-        this.loggedIn = true;
-        this._authNavStatusSource.next(true);
-        this.authForm.reset();
-        this.dialog.closeAll();
-        this.dialog.open(SuccessOrderComponent);
-        if (result) {
-          this.router.navigate(['courier']);
-       }
-      }, error => {
-        console.log(error);
+    this.user.login(this.email, this.password).then(() => {
+      if (this.user.isLoggedIn()) {
+        this.router.navigate(['courier']);
+      } else {
         this.dialog.open(ErrorComponent);
-      },
-    );
+      }
+    });
+
+
+    // const AuthModel = {
+    // email : this.email,
+    // password : this.password,
+    // };
+    // return this.httpService.postData('auth', AuthModel)
+    //   .subscribe((result: JWTModel) => {
+    //     localStorage.setItem('auth_token', result.auth_token);
+    //     this.loggedIn = true;
+    //     this._authNavStatusSource.next(true);
+    //     this.authForm.reset();
+    //     this.dialog.closeAll();
+    //     this.dialog.open(SuccessOrderComponent);
+    //     if (result) {
+    //       this.router.navigate(['courier']);
+    //    }
+    //   }, error => {
+    //     console.log(error);
+    //     this.dialog.open(ErrorComponent);
+    //   },
+    // );
+
+
 }
 
 }

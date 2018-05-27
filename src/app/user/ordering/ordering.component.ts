@@ -23,7 +23,8 @@ export class OrderingComponent implements OnInit {
   address: string;
   geocoder = new google.maps.Geocoder();
 
-  constructor(private formBuilder: FormBuilder, public dialog: MatDialog, private httpService: HttpService) {
+  constructor(private formBuilder: FormBuilder, public dialog: MatDialog,
+    private httpService: HttpService) {
   }
 
   ngOnInit() {

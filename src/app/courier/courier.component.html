@@ -5,21 +5,23 @@
 <div id="content" *ngIf="!loading">
 
   <ul>
-    <li >
+    <li>
       <table>
         <th>Номер заказа</th>
         <th>Номер телефона заказчика</th>
         <th>Сумма заказа</th>
         <th>Время заказа</th>
-        <th>Адресс доставки</th>
+        <th>Адрес доставки</th>
         <th>Статус</th>
         <tr *ngFor="let order of orders">
-            <td>{{order.id}}</td>
-            <td>{{order.phoneNumber}}</td>
-            <td>{{order.orderPrice}}</td>
-            <td>{{order.dateTime}}</td>
-            <td>{{order.deliveryAddress}}</td>
-            <td><mat-button-toggle>Выполнить</mat-button-toggle></td>
+          <td>{{order.id}}</td>
+          <td>{{order.phoneNumber}}</td>
+          <td>{{order.orderPrice}}</td>
+          <td>{{order.dateTime}}</td>
+          <td>{{order.deliveryAddress}}</td>
+          <td>
+            <mat-button-toggle>Выполнить</mat-button-toggle>
+          </td>
         </tr>
       </table>
 
@@ -36,4 +38,31 @@
 
 
   <p>Длина маршрута: {{totalDistance | number : '1.1-1'}} км</p>
+</div>
+
+<div id="map">
+
+  <mat-form-field>
+    <mat-select placeholder="Адрес отправки" [ngModel]="direction.origin" (ngModelChange)="direction.origin = $event; showDirection()">
+      <mat-option *ngFor="let address of addresses" [value]=address>
+        {{address}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div style="width: 100px"></div>
+
+  <mat-form-field>
+    <mat-select placeholder="Адрес доставки" [ngModel]="direction.destination" (ngModelChange)="direction.destination = $event; showDirection()">
+      <mat-option *ngFor="let address of addresses" [value]=address>
+        {{address}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <ngui-map zoom="13">
+    <directions-renderer [suppressMarkers]="false" [draggable]="false" panel="#my-panel" (directions_changed)="directionsChanged()"
+      [directions-request]="direction">
+    </directions-renderer>
+  </ngui-map>
 </div>
