@@ -38,31 +38,32 @@
 
 
   <p>Длина маршрута: {{totalDistance | number : '1.1-1'}} км</p>
-</div>
 
-<div id="map">
 
-  <mat-form-field>
-    <mat-select placeholder="Адрес отправки" [ngModel]="direction.origin" (ngModelChange)="direction.origin = $event; showDirection()">
-      <mat-option *ngFor="let address of addresses" [value]=address>
-        {{address}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div id="map">
 
-  <div style="width: 100px"></div>
+    <mat-form-field>
+      <mat-select placeholder="Адрес отправки" [ngModel]="direction.origin" (ngModelChange)="direction.origin = $event; showDirection()">
+        <mat-option *ngFor="let address of addresses" [value]="address">
+          {{address}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-select placeholder="Адрес доставки" [ngModel]="direction.destination" (ngModelChange)="direction.destination = $event; showDirection()">
-      <mat-option *ngFor="let address of addresses" [value]=address>
-        {{address}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <div style="width: 100px"></div>
 
-  <ngui-map zoom="13">
-    <directions-renderer [suppressMarkers]="false" [draggable]="false" panel="#my-panel" (directions_changed)="directionsChanged()"
-      [directions-request]="direction">
-    </directions-renderer>
-  </ngui-map>
+    <mat-form-field>
+      <mat-select placeholder="Адрес доставки" [ngModel]="direction.destination" (ngModelChange)="direction.destination = $event; showDirection()">
+        <mat-option *ngFor="let address of addresses" [value]="address">
+          {{address}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <ngui-map zoom="13">
+      <directions-renderer [suppressMarkers]="false" [draggable]="false" panel="#my-panel" (directions_changed)="directionsChanged()"
+        [directions-request]="direction">
+      </directions-renderer>
+    </ngui-map>
+  </div>
 </div>

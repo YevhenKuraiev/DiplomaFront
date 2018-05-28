@@ -36,7 +36,6 @@ export class CourierComponent implements OnInit {
       this.ShowRoutes();
       this.ShowOrders();
     }
-
   }
 
   directionsChanged() {
@@ -65,6 +64,7 @@ export class CourierComponent implements OnInit {
           this.directionsRenderer = directionsRenderer;
         });
         // this.getMarkers(routeModel.start, routeModel.end);
+
       });
 
   }
