@@ -4,42 +4,33 @@
 
 <div id="content" *ngIf="!loading">
 
-  <ul>
-    <li>
-      <table>
-        <th>Номер заказа</th>
-        <th>Номер телефона заказчика</th>
-        <th>Сумма заказа</th>
-        <th>Время заказа</th>
-        <th>Адрес доставки</th>
-        <th>Статус</th>
-        <tr *ngFor="let order of orders">
-          <td>{{order.id}}</td>
-          <td>{{order.phoneNumber}}</td>
-          <td>{{order.orderPrice}}</td>
-          <td>{{order.dateTime}}</td>
-          <td>{{order.deliveryAddress}}</td>
-          <td>
-            <mat-button-toggle>Выполнить</mat-button-toggle>
-          </td>
-        </tr>
-      </table>
+  <table>
+    <th>Номер заказа</th>
+    <th>Номер телефона заказчика</th>
+    <th>Сумма заказа</th>
+    <th>Время заказа</th>
+    <th>Адрес доставки</th>
+    <th>Статус</th>
+    <tr *ngFor="let order of orders">
+      <td>{{order.id}}</td>
+      <td>{{order.phoneNumber}}</td>
+      <td>{{order.orderPrice}}</td>
+      <td>{{order.dateTime}}</td>
+      <td>{{order.deliveryAddress}}</td>
+      <td>
+        <mat-button-toggle>Выполнить</mat-button-toggle>
+      </td>
+    </tr>
+  </table>
 
-      <br>
-      <hr>
-    </li>
-  </ul>
+  <br>
 
   <ul>
     <li *ngFor="let routeInfo of routesInfo">
       {{routeInfo.fullRoute}}</li>
+    <p style="font-weight: bold">Длина маршрута: {{totalDistance | number : '1.1-1'}} км</p>
   </ul>
-  <hr>
-
-
-  <p>Длина маршрута: {{totalDistance | number : '1.1-1'}} км</p>
-
-
+  <br>
   <div id="map">
 
     <mat-form-field>
