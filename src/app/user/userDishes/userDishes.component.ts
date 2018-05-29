@@ -31,7 +31,13 @@ export class UserDishesComponent implements OnInit {
 
   addToCart(index) {
     --index;
-    const dish = this.dishes[index];
+    let dish: any;
+    this.dishes.forEach(element => {
+      if ((element as Dish).id === index) {
+      dish = element;
+      return;
+      }
+    });
     let cartData = [];
     const data = localStorage.getItem('cart');
     if (data !== null) {
